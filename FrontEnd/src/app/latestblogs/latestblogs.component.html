@@ -1,0 +1,36 @@
+<section class="details-card">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4" *ngFor="let post of posts">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img [src]="post.imageurl" alt="">
+                        <span>
+                            <div>......<fa-icon [icon]="faheart"></fa-icon>Likes
+                        <span class="badge rounded-pill badge-notification bg-dark">{{totlikes[post.pid]}}</span>
+                        </div>
+                        </span>                        
+                    </div>
+                    <div class="card-desc">
+                        <h4>{{post.heading}}</h4>
+                           <div class="meta">
+                              <ul>
+                                 <li>{{post.dateofpost}}</li>
+                              </ul>
+                           </div>
+                        <p>{{post.description}}</p>
+                        <a href="#" class="btn-card">Read</a>   
+                        <br>
+                        <br>
+                        <button class="button-1" id={{post.pid}}  (click)="addpostlike($event)"><fa-icon [icon]="faheart"></fa-icon>Like</button>
+                        <button class="button-1"><fa-icon [icon]="facomments"></fa-icon>Comment</button>
+                        <button class="button-1"><fa-icon [icon]="fashare"></fa-icon>Share</button>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
+
+
